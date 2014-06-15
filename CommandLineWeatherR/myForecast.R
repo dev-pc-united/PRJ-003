@@ -2,7 +2,7 @@ suppressMessages(library('RJSONIO'));
 suppressMessages(library('RCurl'));
 
 # Change to your id. Getting an ID from OpenWeather.org is Free
-appId <- "10c94e0253609fd9f78e207f831b2b09";
+appId <- "68ec37ac14cb53ab45c1eb6ab2198dcb ";
 
 kelvinToFarenheit <- function (kelvinTemp) {
   (kelvinTemp - 273.15)*1.8 + 32;
@@ -20,10 +20,17 @@ latitude <- args[1];
 longitude <- args[2];
 imagePath <- args[3];
 
-currentWeather <- getURL(paste("http://api.openweathermap.org/data/2.5/forecast?lat=",
-                               latitude, 
-                               "&lon=", longitude, 
-                               "&APPID=", appId, sep=''));
+
+# http://api.openweathermap.org/data/2.5/weather?id=2757783
+
+currentWeather <- getURL(paste("http://api.openweathermap.org/data/2.5/weather?id=2757783&APPID=", appId, sep=''));
+
+
+# currentWeather <- getURL(paste("http://api.openweathermap.org/data/2.5/forecast?lat=",
+#                               latitude, 
+#                               "&lon=", longitude, 
+#                               "&APPID=", appId, sep=''));
+
 weatherData <- fromJSON(currentWeather);
 
 print(weatherData);

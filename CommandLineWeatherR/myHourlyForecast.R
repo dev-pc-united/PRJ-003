@@ -1,12 +1,12 @@
 suppressMessages(library('RJSONIO'));
 suppressMessages(library('RCurl'));
 
-source('~/Development/rprogramming/CommandLineWeatherR/getWeatherImage.R');
-source('~/Development/rprogramming/CommandLineWeatherR/kelvinToFarenheit.R');
-source('~/Development/rprogramming/CommandLineWeatherR/getCurrentLocation.R');
+# source('~/Development/rprogramming/CommandLineWeatherR/getWeatherImage.R');
+# source('~/Development/rprogramming/CommandLineWeatherR/kelvinToFarenheit.R');
+# source('~/Development/rprogramming/CommandLineWeatherR/getCurrentLocation.R');
 
 # Change to your id. Getting an ID from OpenWeather.org is Free
-appId <- "10c94e0253609fd9f78e207f831b2b09";
+appId <- "68ec37ac14cb53ab45c1eb6ab2198dcb";
 
 args <- commandArgs(trailingOnly = TRUE);
 imagePath <- args[1];
